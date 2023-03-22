@@ -231,3 +231,22 @@ input.note-title {
   text-align: center;
   font-size: 1.2em;
 }
+
+#sidebar[hidden] {
+  display: none;
+}
+
+#write-box[hidden] {
+  display: none;
+}
+
+#sign-in-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.hidden {
+  display: none;
+}

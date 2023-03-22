@@ -6,6 +6,8 @@ import Layout from "./Layout";
 import WriteBox from "./WriteBox";
 import Empty from "./Empty";
 import reportWebVitals from "./reportWebVitals";
+import { GoogleOAuthProvider } from '@react-oauth/google';
+import App from './App';
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -25,6 +27,11 @@ root.render(
         </Route>
       </Routes>
     </BrowserRouter>
+    <GoogleOAuthProvider clientId="771499498177-eb4bsupflvgfin9m49jahtl9ujnoiq6p.apps.googleusercontent.com">
+        <React.StrictMode>
+            <App />
+        </React.StrictMode>
+    </GoogleOAuthProvider>
   </>
 );
 
