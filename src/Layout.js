@@ -6,7 +6,7 @@ import { currentDate } from "./utils";
 
 const localStorageKey = "lotion-v1";
 
-function Layout() {
+function Layout({}) {
   const navigate = useNavigate();
   const mainContainerRef = useRef(null);
   const [collapse, setCollapse] = useState(false);
