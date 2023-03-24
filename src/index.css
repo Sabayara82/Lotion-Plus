@@ -81,13 +81,6 @@ button:hover,
   display: flex;
   flex: 1;
 }
-#signInDiv {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-
 #write-box {
   flex: 1;
   overflow-y: auto;
