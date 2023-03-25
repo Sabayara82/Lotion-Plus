@@ -93,6 +93,13 @@ button:hover,
   flex-direction: column;
   border-right: 1px solid #eee;
 }
+#sign-in {
+  top: 250px; /* adjust this value to position the element to your desired number of pixels from the top */
+  left: 50%; /* set the left property to 50% to position the element in the center */
+  justify-content: center;
+  align-items: center;
+}
+ 
 #notes-holder {
   flex: 1;
   overflow-y: auto;
