@@ -31,7 +31,7 @@ function Layout() {
       }
     }
   }, []);
-  
+
 
   useEffect(() => {
     localStorage.setItem(localStorageKey, JSON.stringify(notes));
@@ -51,6 +51,7 @@ function Layout() {
   useEffect(() => {
       if (user) {
         setAccessToken(user.access_token); 
+        console.log(accessToken); 
         axios
           .get(`https://www.googleapis.com/oauth2/v1/userinfo?access_token=${user.access_token}`, {
             headers: {
@@ -103,7 +104,7 @@ function Layout() {
           "Content-Type": "application/json",
           "Authentication": accessToken
         },
-        body: JSON.stringify({...note, email: profile.email}),
+        body: JSON.stringify({...note, email: profile.email})
       }
     );
   };
@@ -120,7 +121,7 @@ function Layout() {
           "Content-Type": "application/json",
           "Authentication": accessToken
         },
-        body: JSON.stringify({id: noteId, email: email}),
+        body: JSON.stringify({id: noteId, email: email})
       }
     );
     setNotes([...notes.slice(0, index), ...notes.slice(index + 1)]);
@@ -176,8 +177,8 @@ function Layout() {
           <h6 id="app-moto">Like Notion, but worse.</h6>
         </div>
         <div id="right">
-        <div id="absolute">{signedIn ? profile.email : ""}</div>
-        <button id={signedIn ? ("log-out-button"):("log-out-button-hidden")} onClick={() => logOut()}>Log out</button>
+        <div id="absolute">{signedIn ? "" : ""}</div>
+        <button id={signedIn ? ("log-out-button"):("log-out-button-hidden")} onClick={() => logOut()}>{profile.name} (Log out)</button>
       </div>
       </header>
       <div id="main-container" ref={mainContainerRef}>
